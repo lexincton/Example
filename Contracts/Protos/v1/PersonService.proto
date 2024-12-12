@@ -1,0 +1,40 @@
+﻿syntax = "proto3";
+
+import "apis/google/api/annotations.proto";
+import "Protos/Comm.proto";
+import "Protos/Person.proto";
+
+package Contracts.v1;
+
+service PersonIntegration {
+	rpc GetPersons (MessageString) returns (PersonList){
+		option (google.api.http) = {
+		   get: "/v1/GetPersons"
+		 };
+	};
+	rpc GetPersonById (LongMessage) returns (Person){
+		option (google.api.http) = {
+		   get: "/v1/GetPersonById"
+		 };
+	};
+	rpc PersonAdd (Person) returns (Person){
+		option (google.api.http) = {
+		   post: "/v1/PersonAdd"
+		   body: "*"
+		 };
+	};
+
+	rpc PersonUpdate (Person) returns (Person){
+		option (google.api.http) = {
+		   put: "/v1/PersonUpdate"
+		   body: "*"
+		 };
+	};
+
+	rpc PersonDelete (Person) returns (EmptyMessage){
+		option (google.api.http) = {
+		   delete: "/v1/PersonDelete"
+		   body: "*"
+		 };
+	};
+}

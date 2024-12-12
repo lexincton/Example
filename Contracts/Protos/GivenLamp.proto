@@ -1,0 +1,32 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Contracts";
+
+import "Protos/Comm.proto";
+import "Protos/Lamp.proto";
+import "Protos/Person.proto";
+
+package Contracts;
+
+message GivenLampRequest
+{
+	GivenLampData givenLamp = 1;
+	GivenLampStatus givenLampAction = 2;
+}
+
+message GivenLampData
+{
+	Lamp Lamp = 1;
+	Person Person = 2;
+}
+
+message GivenLampList
+{
+	repeated GivenLampData GivenLamps = 1;
+}
+
+enum GivenLampStatus
+{
+	Given = 0;
+	Return = 1;
+}

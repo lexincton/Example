@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Contracts";
+
+package Contracts;
+
+message Person
+{
+	int64 Id = 1;
+	string LastName = 2;
+	string FistName = 3;
+}
+
+message PersonList
+{
+	repeated Person Persons = 1;
+}

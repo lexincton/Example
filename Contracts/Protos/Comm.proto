@@ -1,0 +1,19 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Contracts";
+
+package Contracts;
+
+message EmptyMessage
+{
+}
+
+message MessageString
+{
+	string Filter = 1;
+}
+
+message LongMessage
+{
+	int64 Id = 1;
+}

@@ -1,0 +1,40 @@
+﻿syntax = "proto3";
+
+import "apis/google/api/annotations.proto";
+import "Protos/Comm.proto";
+import "Protos/Lamp.proto";
+
+package Contracts.v1;
+
+service LampIntegration {
+	rpc GetLamps (MessageString) returns (LampList){
+		option (google.api.http) = {
+		   get: "/v1/GetLamps"
+		 };
+	};
+	rpc GetLampById (LongMessage) returns (Lamp){
+		option (google.api.http) = {
+		   get: "/v1/GetLampById"
+		 };
+	};
+	rpc LampAdd (Lamp) returns (Lamp){
+		option (google.api.http) = {
+		   post: "/v1/LampAdd"
+		   body: "*"
+		 };
+	};
+
+	rpc LampUpdate (Lamp) returns (Lamp){
+		option (google.api.http) = {
+		   put: "/v1/LampUpdate"
+		   body: "*"
+		 };
+	};
+
+	rpc LampDelete (Lamp) returns (EmptyMessage){
+		option (google.api.http) = {
+		   delete: "/v1/LampDelete"
+		   body: "*"
+		 };
+	};
+}

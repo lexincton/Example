@@ -1,0 +1,6 @@
+*.vsidx
+*.bin
+*.dll
+**/Debug/*
+**/Obj/*
+**/.vs/*

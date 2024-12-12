@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Protos\GivenLamp.proto" />
+    <None Remove="Protos\GivenLamp.v2.proto" />
+    <None Remove="Protos\LampService.proto" />
+    <None Remove="Protos\PersonService.proto" />
+    <None Remove="Protos\v2\LampService.proto" />
+    <None Remove="Protos\v2\PersonService.proto" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Google.Protobuf" Version="3.28.3" />
+		<PackageReference Include="Grpc.Core" Version="2.46.6" />
+		<PackageReference Include="Grpc.Tools" Version="2.67.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Protobuf Include="apis\google\api\annotations.proto" />
+	  <Protobuf Include="apis\google\api\http.proto" />	  
+	  <Protobuf Include="Protos\Comm.proto" GrpcServices="Both" />	  
+	  <Protobuf Include="Protos\v1\LampService.proto" GrpcServices="Both" />	  
+	  <Protobuf Include="Protos\v1\PersonService.proto" GrpcServices="Both" />	  
+	  <Protobuf Include="Protos\Person.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\Lamp.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\GivenLamp.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\v1\GivenLampService.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\v2\GivenLampService.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\v2\LampService.proto" GrpcServices="Both" />
+	  <Protobuf Include="Protos\v2\PersonService.proto" GrpcServices="Both" />
+	</ItemGroup>
+	
+</Project>

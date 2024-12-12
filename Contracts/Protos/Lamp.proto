@@ -1,0 +1,16 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Contracts";
+
+package Contracts;
+
+message Lamp
+{
+	int64 Id = 1;
+	string Name = 2;
+}
+
+message LampList
+{
+	repeated Lamp Lamps = 1;
+}

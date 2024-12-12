@@ -1,0 +1,22 @@
+﻿syntax = "proto3";
+
+import "apis/google/api/annotations.proto";
+
+import "Protos/Comm.proto";
+import "Protos/GivenLamp.proto";
+
+package Contracts.v1;
+
+service GivenLampIntegration {
+	rpc GetGivenLamps (EmptyMessage) returns (GivenLampList){
+		option (google.api.http) = {
+		   get: "/v1/GetGivenLamps"
+		 };
+	};
+	rpc ChangeGivenLamp (GivenLampRequest) returns (EmptyMessage){
+		option (google.api.http) = {
+		    post: "/v1/ChangeGivenLamp"
+		    body: "*"
+		};
+	};
+}
